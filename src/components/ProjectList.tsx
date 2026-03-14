@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 
 interface Project {
@@ -30,6 +31,7 @@ interface ProjectListProps {
 }
 
 export default function ProjectList({ onHover }: ProjectListProps) {
+  const navigate = useNavigate();
   const listRef = useRef<HTMLUListElement>(null);
   const itemsRef = useRef<HTMLLIElement[]>([]);
 
@@ -71,6 +73,11 @@ export default function ProjectList({ onHover }: ProjectListProps) {
             ref={(el) => setItemRef(el, i)}
             className="project-item"
             data-cursor-hover
+            onClick={() => {
+              if (project.name === 'AXIOME') {
+                navigate('/axiome');
+              }
+            }}
             onMouseEnter={(e) =>
               onHover(project, e.clientX, e.clientY)
             }
