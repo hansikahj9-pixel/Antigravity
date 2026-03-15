@@ -1,0 +1,133 @@
+/* ============ PROCESS ROUTE ============ */
+.process-container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #0a0a0c;
+  color: #FFFFFF;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  padding-top: 100px; /* Spacer for fixed header */
+}
+
+@media (min-width: 768px) {
+  .process-grid {
+    grid-template-columns: 50vw 50vw;
+    padding-top: 0;
+  }
+}
+
+.process-left {
+  padding: 4rem 10% 4rem 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.process-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 6rem);
+  color: #F5D061;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.process-subheading {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #C3C1B9;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+
+.process-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-weight: 300;
+  max-width: 500px;
+}
+
+.process-right {
+  position: relative;
+  padding: 4rem 15% 4rem 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+.process-right-content {
+  position: relative;
+  z-index: 2;
+}
+
+.inspiration-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 4rem);
+  color: #FFFFFF;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Abstract Dream Orb ── */
+.dream-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vh;
+  height: 60vh;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(90, 107, 71, 0.4) 0%, rgba(138, 28, 28, 0.25) 50%, transparent 80%);
+  filter: blur(80px);
+  z-index: 0;
+  border-radius: 50%;
+  animation: orbRotate 20s infinite linear, orbPulse 10s infinite ease-in-out alternate;
+  pointer-events: none;
+}
+
+@keyframes orbRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1.1); }
+  50% { transform: translate(-50%, -50%) rotate(180deg) scale(0.9); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1.1); }
+}
+
+@keyframes orbPulse {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* ── Animations ── */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
