@@ -368,9 +368,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .axiome-menu-link {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.25em;
   color: #FFFFFF;
   text-transform: uppercase;
   position: relative;
@@ -404,9 +404,9 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.5rem;
   color: #F5D061;
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: 0.85;
@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .axiome-back-link:hover {
   opacity: 1;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.25em;
   color: #fff;
 }
 
