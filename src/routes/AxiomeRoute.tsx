@@ -17,13 +17,20 @@ export default function AxiomeRoute() {
       {/* ── Subtle Dark Overlay ── */}
       <div className="axiome-overlay" />
 
-      {/* ── Minimalist Navigation ── */}
-      <nav className="axiome-nav">
+      {/* ── Global Navigation Overlay ── */}
+      <header className="axiome-header">
         <Link to="/" className="axiome-back-link">
           <span className="axiome-back-arrow">←</span>
           Back to Home
         </Link>
-      </nav>
+
+        {/* ── Narrative Menu ── */}
+        <nav className="axiome-menu">
+          <Link to="/axiome/process" className="axiome-menu-link">THE PROCESS</Link>
+          <Link to="/axiome/maison" className="axiome-menu-link">LA MAISON</Link>
+          <Link to="/axiome/collection" className="axiome-menu-link">THE COLLECTION</Link>
+        </nav>
+      </header>
     </div>
   );
 }

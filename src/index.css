@@ -347,15 +347,55 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 
-.axiome-nav {
+.axiome-header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 2rem 2.5rem;
+  width: 100vw;
+  padding: 2rem 5%;
   z-index: 10;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  background: transparent;
+}
+
+.axiome-menu {
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.axiome-menu-link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: opacity 0.4s ease;
+}
+
+.axiome-menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #F5D061;
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.axiome-menu-link:hover {
+  opacity: 0.8;
+}
+
+.axiome-menu-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .axiome-back-link {
