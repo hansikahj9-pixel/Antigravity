@@ -1,37 +1,29 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Environment, Float, OrthographicCamera } from '@react-three/drei';
-import * as THREE from 'three';
-import MeditatingStructures from '../components/Axiome/MeditatingStructures';
-import DaliBackground from '../components/Axiome/DaliBackground';
-import AxiomeText from '../components/Axiome/AxiomeText';
+import { Link } from 'react-router-dom';
+import videoSrc from '../assets/66a3c3e1-ba5d-4278-8ec4-0b9a7a3ea23f.mp4';
 
 export default function AxiomeRoute() {
   return (
-    <div style={{ width: '100vw', height: '100vh', background: 'linear-gradient(to bottom, #20498B, #F07830)' }}>
-      <Canvas
-        dpr={[1, 2]}
-        camera={{ position: [0, 0, 15], fov: 45 }}
-        gl={{ antialias: true, alpha: true }}
-      >
-        {/* Colorful stage lighting */}
-        <ambientLight intensity={0.4} color="#FEEA6D" />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} color="#F07830" />
-        <directionalLight position={[-10, 5, 5]} intensity={1.2} color="#20498B" />
-        <pointLight position={[0, -5, 5]} intensity={2} color="#E92F2F" />
+    <div className="axiome-container">
+      {/* ── Cinematic Video Background ── */}
+      <video
+        className="axiome-video"
+        src={videoSrc}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
 
-        {/* Surreal Elements */}
-        <DaliBackground />
-        
-        <Float speed={1.5} rotationIntensity={0.2} floatIntensity={1.5}>
-          <MeditatingStructures />
-        </Float>
+      {/* ── Subtle Dark Overlay ── */}
+      <div className="axiome-overlay" />
 
-        <AxiomeText />
-
-        {/* Post-processing or Environment */}
-        <Environment preset="apartment" blur={0.8} />
-        <OrbitControls makeDefault enableZoom={false} enablePan={false} maxPolarAngle={Math.PI / 2 + 0.2} minPolarAngle={Math.PI / 2 - 0.2} />
-      </Canvas>
+      {/* ── Minimalist Navigation ── */}
+      <nav className="axiome-nav">
+        <Link to="/" className="axiome-back-link">
+          <span className="axiome-back-arrow">←</span>
+          Back to Home
+        </Link>
+      </nav>
     </div>
   );
 }

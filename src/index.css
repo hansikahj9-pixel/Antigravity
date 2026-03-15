@@ -316,3 +316,74 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   color: var(--color-muted);
 }
+
+/* ============ AXIOME ROUTE ============ */
+.axiome-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.axiome-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+.axiome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.axiome-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.axiome-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #F5D061;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.85;
+}
+
+.axiome-back-link:hover {
+  opacity: 1;
+  letter-spacing: 0.18em;
+  color: #fff;
+}
+
+.axiome-back-arrow {
+  display: inline-block;
+  font-size: 1rem;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.axiome-back-link:hover .axiome-back-arrow {
+  transform: translateX(-4px);
+}
